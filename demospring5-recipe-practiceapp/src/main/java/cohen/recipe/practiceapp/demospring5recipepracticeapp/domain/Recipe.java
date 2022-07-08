@@ -17,7 +17,7 @@ public class Recipe {
     //Java Fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+    private Long id;
 
     private String description;
     private Integer prepTime;
