@@ -8,23 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
-//The next line, the @Controller annotation makes this controller a spring bean causing it to get picked up by the spring boot default package scan. 
 @Slf4j
+//The next line, the @Controller annotation makes this controller a spring bean causing it to get picked up by the spring boot default package scan. 
 @Controller
 public class IndexController {
     private RecipeService recipeService;
 
     public IndexController(RecipeService recipeService) {
-        this.recipeService = recipeService;
-        
+        this.recipeService = recipeService;    
     }
 
     @RequestMapping({"", "/", "/index"})
     public String getIndexPage(Model model){
-
         model.addAttribute("recipes", recipeService.getRecipes());
-      
-
         return "index";
     }
     
